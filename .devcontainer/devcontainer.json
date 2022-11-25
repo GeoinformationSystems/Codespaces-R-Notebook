@@ -24,8 +24,10 @@
 				"python.defaultInterpreterPath": "/opt/conda/bin/python",
 				"workbench.colorTheme": "GitHub Light",
 				"workbench.iconTheme": "vscode-icons",
+				"vsicons.dontShowNewVersionMessage": true,
 				"workbench.startupEditor": "readme",
-				"editor.formatOnSave": true
+				"editor.formatOnSave": true,
+				"terminal.integrated.enablePersistentSessions": false
 			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
