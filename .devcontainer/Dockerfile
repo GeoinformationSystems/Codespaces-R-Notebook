@@ -24,6 +24,8 @@ RUN apt-get update \
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-
+# install R languageserver. 'repos' identifies the mirror, 
+# another option than uni-muenster is repos="https://cran.r-project.org/".
+RUN /opt/conda/lib/R/bin/R -e 'install.packages("languageserver", repos="https://cran.uni-muenster.de/")'
 
 USER jovyan
