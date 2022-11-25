@@ -27,7 +27,8 @@
 				"vsicons.dontShowNewVersionMessage": true,
 				"workbench.startupEditor": "readme",
 				"editor.formatOnSave": true,
-				"terminal.integrated.enablePersistentSessions": false
+				"terminal.integrated.enablePersistentSessions": false,
+				"git.autofetch": false
 			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
