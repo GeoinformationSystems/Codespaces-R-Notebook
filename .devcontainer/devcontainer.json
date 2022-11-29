@@ -27,9 +27,9 @@
 				"vsicons.dontShowNewVersionMessage": true,
 				"workbench.startupEditor": "readme",
 				"editor.formatOnSave": true,
-				"terminal.integrated.enablePersistentSessions": false,
-				"terminal.integrated.onFirstSessionStart": false,
 				"git.confirmSync": false,
+				"r.rterm.linux": "/usr/local/bin/radian",
+				"r.bracketedPaste": true,
 				"workbench.panel.defaultLocation": "right",
 				"workbench.panel.opensMaximized": "never"
 			},

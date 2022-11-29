@@ -2,6 +2,8 @@
 
 FROM jupyter/r-notebook
 
+
+
 # We want to run common-debian.sh from here:
 # https://github.com/microsoft/vscode-dev-containers/tree/main/script-library#development-container-scripts
 # But that script assumes that the main non-root user (in this case jovyan)
@@ -9,10 +11,23 @@ FROM jupyter/r-notebook
 COPY library-scripts/common-debian.sh /tmp/library-scripts/
 USER root
 RUN apt-get update \
- && groupadd jovyan \
- && usermod -g jovyan -a -G users jovyan \
- && bash /tmp/library-scripts/common-debian.sh \
- && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+    && groupadd jovyan \
+    && usermod -g jovyan -a -G users jovyan \
+    && bash /tmp/library-scripts/common-debian.sh \
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+
+
+USER $NB_UID
+# R packages
+RUN conda install --quiet --yes \
+    'r-irkernel=1.3*' \ 
+    'r-irdisplay=1.1*' \
+    'r-repr=1.1*' \
+    'r-languageserver=0.3*' \
+    'radian=0.6.*' \
+    && \
+    conda clean --all -f -y && \
+    fix-permissions "${CONDA_DIR}"
 
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
@@ -26,6 +41,5 @@ RUN apt-get update \
 
 # install R languageserver. 'repos' identifies the mirror, 
 # another option than uni-muenster is repos="https://cran.r-project.org/".
-RUN /opt/conda/lib/R/bin/R -e 'install.packages("languageserver", repos="https://cran.uni-muenster.de/")'
 
 USER jovyan
