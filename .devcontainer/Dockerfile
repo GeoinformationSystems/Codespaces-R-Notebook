@@ -35,8 +35,6 @@ RUN conda install --quiet --yes \
     'r-hexbin=1.28*' \
     'r-htmltools=0.4*' \
     'r-htmlwidgets=1.5*' \
-    'r-irkernel=1.3*' \
-    'r-irdisplay=1.1' \
     'r-repr=1.1*' \
     'r-nycflights13=1.0*' \
     'r-randomforest=4.6*' \
