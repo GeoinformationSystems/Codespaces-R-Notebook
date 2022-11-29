@@ -20,9 +20,7 @@ RUN apt-get update \
 USER $NB_UID
 # R packages
 RUN conda install --quiet --yes \
-    'r-irkernel=1.3*' \ 
-    'r-irdisplay=1.1*' \
-    'r-repr=1.1*' \
+    'r-irkernel=1.3*' \
     'r-languageserver=0.3*' \
     'radian=0.6.*' \
     && \
