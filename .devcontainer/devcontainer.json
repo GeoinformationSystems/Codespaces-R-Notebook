@@ -29,7 +29,8 @@
 				"editor.formatOnSave": true,
 				"terminal.integrated.enablePersistentSessions": false,
 				"terminal.integrated.onFirstSessionStart": false,
-				"git.confirmSync": false
+				"git.confirmSync": false,
+				"workbench.panel.defaultLocation": "right"
 			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
